@@ -1,11 +1,9 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 const bodyEl = document.getElementById('root');
-const gallery = document.querySelector('.gallery');
+const galleryEl = document.querySelector('.gallery');
 
 function createGalleryElement(items) {
-   let galleryEl = document.querySelector('.gallery');
-
     let galleryElements = items.map(item => {
         let itemEl = document.createElement('li');
       itemEl.classList.add('gallery__item');
@@ -49,7 +47,7 @@ function initGallery(items) {
 
 initGallery(galleryItems);
 
-gallery.addEventListener('click', event => {
+galleryEl.addEventListener('click', event => {
     event.preventDefault();
     if (event.target.nodeName !== 'IMG') {
 		return
