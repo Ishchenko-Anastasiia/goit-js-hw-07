@@ -15,7 +15,6 @@ galleryItems.forEach(item => {
     const galleryImg = document.createElement('img');
     galleryImg.className = 'gallery__image';
     galleryImg.src = item.preview;
-    galleryImg.setAttribute('title', item.description);
     galleryImg.alt = item.description;
 
     itemEl.append(imgLink);
@@ -27,14 +26,9 @@ galleryItems.forEach(item => {
 
 gallery.append(...items);
 
-function onGalleryItemClick(event) {
-  let clickedItemEl = event.target.closest('.gallery_item');
-  if (!clickedItemEl) {
-    return;
-  }
-}
 
 new SimpleLightbox('.gallery a', {
-    captionDelay: 250
+    captionsData: "alt",
+    captionDelay: 250,
 })
 

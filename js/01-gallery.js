@@ -1,6 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
-const bodyEl = document.getElementById('root');
+
 const galleryEl = document.querySelector('.gallery');
 
 function createGalleryElement(items) {
@@ -23,29 +23,10 @@ function createGalleryElement(items) {
         return itemEl;
     });
     galleryEl.append(...galleryElements);
-    bodyEl.append(galleryEl);
+
   
     return galleryEl;
 }
-
-function onGalleryItemClick(event) {
-  let clickedItemEl = event.target.closest('.gallery_item');
-  if (!clickedItemEl) {
-    return;
-  }
-}
-
-function bindEvents(galleryEl) {
-  galleryEl.addEventListener('click', onGalleryItemClick);
-}
-
-function initGallery(items) {
-  let galleryEl = createGalleryElement(items);
-
-  bindEvents(galleryEl);
-}
-
-initGallery(galleryItems);
 
 galleryEl.addEventListener('click', event => {
     event.preventDefault();
@@ -61,3 +42,13 @@ galleryEl.addEventListener('click', event => {
   instance.show()
   
 })
+
+function initGallery(items) {
+  let galleryEl = createGalleryElement(items);
+
+  bindEvents(galleryEl);
+}
+
+initGallery(galleryItems);
+
+
