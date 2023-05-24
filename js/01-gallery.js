@@ -45,8 +45,6 @@ galleryEl.addEventListener('click', event => {
 
 function initGallery(items) {
   let galleryEl = createGalleryElement(items);
-
-  bindEvents(galleryEl);
 }
 
 initGallery(galleryItems);
