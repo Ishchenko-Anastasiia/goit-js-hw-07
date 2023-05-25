@@ -28,20 +28,19 @@ function createGalleryElement(items) {
     return galleryEl;
 }
 
+
 galleryEl.addEventListener('click', event => {
-    event.preventDefault();
-    if (event.target.nodeName !== 'IMG') {
-		return
-	}
+  event.preventDefault();
+  if (event.target.nodeName !== 'IMG') {
+    return
+  }
 
-    const selectedImage = event.target.getAttribute('data-source')
+  const selectedImage = event.target.getAttribute('data-source')
 
-    const instance = basicLightbox.create(`
-    <img src="${selectedImage}" width="800" height="600">`)
+  const instance = basicLightbox.create(`<img src="${selectedImage}" width="800" height="600">`)
 
-  instance.show()
-  
-})
+  instance.show();
+});
 
 function initGallery(items) {
   let galleryEl = createGalleryElement(items);
